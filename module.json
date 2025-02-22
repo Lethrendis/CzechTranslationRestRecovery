@@ -1,0 +1,28 @@
+{
+  "id": "czechtranslationrestrecovery",
+  "title": "CzechTranslationRestRecovery",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12.331",
+    "verified": "12.331"
+  },
+  "description": "Český překlad modulu RestRecovery for 5e.",
+  "authors": [
+    {
+      "name": "Lethrendis",
+      "email": "michmildub@seznam.cz",
+      "discord": "Lethrendis",
+      "flags": {}
+    }
+  ],
+  "languages": [
+      {
+      "lang": "cs",
+      "name": "Čeština",
+      "path": "lang/cs.json"
+    }
+  ],
+  "url": "https://github.com/Lethrendis/CzechTranslationRestRecovery",
+  "manifest": "https://raw.githubusercontent.com/Lethrendis/CzechTranslationRestRecovery/main/module.json",
+  "download": "https://github.com/Lethrendis/CzechTranslationRestRecovery/archive/refs/heads/main.zip"
+}
