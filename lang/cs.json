@@ -1,0 +1,671 @@
+{
+  "REST-RECOVERY": {
+    "JournalUuids": {
+      "Exhaustion": "Compendium.rest-recovery.exhaustion.JournalEntry.TqAqEUUR8LyEDi7q.JournalEntryPage.epHJRWnHvCPA8WKF"
+    },
+    "ClassNames": {
+      "Wizard": "Kouzelník",
+      "Druid": "Druid",
+      "Bard": "Bard"
+    },
+    "Warnings": {
+      "PreventedLongRest": "Nemůžeš si důkladně odpočinout, protože jsi pod efektem, který ti to znemožňuje!",
+      "PreventedShortRest": "Nemůžeš si důkladně odpočinout, protože jsi pod efektem, který ti to znemožňuje!",
+      "NotPromptedLongRest": "PJ nastavil tuto hru tak, že nemůžeš začít důkladný krátký odpočinek bez vyzvání!",
+      "NotPromptedShortRest": "PJ nastavil tuto hru tak, že nemůžeš začít důkladný krátký odpočinek bez vyzvání!",
+      "ItemNoUses": "\"{item}\" už nemá žádné použití, takže nemůže být použito."
+    },
+    "FeatureNames": {
+      "ArcaneRecovery": "Zotavení mystiky",
+      "NaturalRecovery": "Přírodní obnova",
+      "PowerSurge": "Mocná vlna",
+      "SongOfRest": "Odpočinková píseň",
+      "ChefFeat": "Kuchař",
+      "ChefTools": "Kuchařské nástroje",
+      "PeriaptItem": "Škapulíř hojení ran",
+      "WoundClosureBlessing": "Požehnání hojení ran",
+      "DurableFeat": "Otužilec",
+      "BlackBloodFeature": "Léčení černé Krve"
+    },
+    "OneDnDExhaustionEffect": {
+      "Name": "Vyčerpání (DnD2024)",
+      "Description": "V DnD2024 bytost při vyčerpání trpí kumulativními -1 postihy za každou úroveň vyčerpání na všechny hody k20 (hody na útok, ověření vlastností i dovedností a záchranné hody) a SO kouzel. Když bytost dosáhne desáté úrovně vyčerpání, umírá."
+    },
+    "PatchedRecovery": "{actorName} s {recoveryName} byl ošetřen.",
+    "PatchedConsumable": "Aktualizováno použití {itemName}.",
+    "Fractions": {
+      "None": "Žádná",
+      "Quarter": "Čtvrtina",
+      "Half": "Polovina",
+      "Full": "Vše",
+      "Custom": "Vlastní vzorec"
+    },
+    "RollFormula": {
+      "Normal": "Normální",
+      "Advantage": "Výhoda",
+      "Maximized": "Maximalizováno"
+    },
+    "Currencies": {
+      "Copper": "měďáků",
+      "Electrum": "elektronů",
+      "Gold": "zlatých",
+      "Platinum": "platiňáků",
+      "Silver": "stříbrných"
+    },
+    "Rounding": {
+      "RoundDown": "Zaokrouhleno dolů",
+      "RoundUp": "Zaokrouhleno nahoru"
+    },
+    "Misc": {
+      "Food": "Jídlo",
+      "Water": "Tekutiny",
+      "Both": "Obojí"
+    },
+    "NumberToText": {
+      "1": "Jedna",
+      "2": "Dvě",
+      "3": "Tři",
+      "4": "Čtyři",
+      "5": "Pět",
+      "1st": "1.",
+      "2nd": "2.",
+      "3rd": "3.",
+      "4th": "4.",
+      "5th": "5."
+    },
+    "Chat": {
+      "RegainedUses": "Navíc si obnovili následující:",
+      "SpellSlotList": "pozice kouzla {number} na {level} úrovni",
+      "SpellSlotListPlural": "pozice kouzel {number} na {level} úrovni",
+      "RecoveryNameNum": "{name} si obnovil/a {number} použití",
+      "SongOfRest": "{name} si užívá {bard}ovu {songOfRestName}.",
+      "SongOfRestSelf": "{name} si užívá svou vlastní {songOfRestName}.",
+      "Chef": "{name} si pochutnává na skvělém jídle od {chef}.",
+      "ChefSelf": "{name} si pochutnává na svém vlastním skvělém jídle.",
+      "ConsumedBothDayWorth": "{actorName} spotřeboval/a {itemName}, celodenní dávku jídla a tekutin.",
+      "ConsumedBoth": "{actorName} spotřeboval/a {itemName} pro {charges} jednotek jídla a tekutin.",
+      "ConsumedFoodDayWorth": "{actorName} snědl/a {itemName}, celodenní dávku jídla.",
+      "ConsumedFood": "{actorName} snědl/a {itemName} pro {charges} jednotek jídla.",
+      "ConsumedWaterDayWorth": "{actorName} vypil/a {itemName}, celodenní dávku tekutin.",
+      "ConsumedWater": "{actorName} vypil/a {itemName} pro {charges} jednotek tekutin.",
+      "RequiredSatedFood": "Potřebuje {units} jednotek jídla, aby byl/a sytý/á na celý den.",
+      "RequiredSatedWater": "Potřebuje {units} jednotek tekutin, aby byl/a sytý/á na celý den.",
+      "SatedFood": "Už není třeba žádné další jídlo.",
+      "SatedWater": "Už není třeba žádných dalších tekutin.",
+      "FoodFullNone": "Snědl/a dostatek svého vlastního jídla, aby byl/a sytý/á.",
+      "FoodHalfNone": "Snědl/a část svého vlastního jídla, ale jen polovinu potřebného množství.",
+      "FoodHalfHalf": "Snědl/a něco z externího zdroje a část svého jídla, aby byl/a sytý/á.",
+      "FoodNoneFull": "Snědl/a dostatek jídla z externího zdroje, aby byl/a sytý/á.",
+      "FoodNoneHalf": "Snědl/a něco z externího zdroje, ale jen polovinu potřebného množství.",
+      "FoodNoneNone": "Nic nejedl/a.",
+      "WaterFullNone": "Vypil/a dostatek své vlastní tekutiny, aby byl/a sytý/á.",
+      "WaterHalfNone": "Vypil/a část svých vlastní tekutin, ale jen polovinu potřebného množství.",
+      "WaterHalfHalf": "Vypil/a něco z externího zdroje a část svých tekutin, aby byl/a sytý/á.",
+      "WaterNoneFull": "Vypil/a dostatek tekutin z externího zdroje, aby byl/a sytý/á.",
+      "WaterNoneHalf": "Vypil/a něco z externího zdroje, ale jen polovinu potřebného množství.",
+      "WaterNoneNone": "Nic nepil/a.",
+      "NoExhaustion": "ale vyhnul/a se vyčerpání.",
+      "Exhaustion": "Utrpěl/a {exhaustion} úrovně vyčerpání.",
+      "ExhaustionDeath": "Bohužel, {actorName} dosáhl/a {max_levels} úrovní vyčerpání a zemřel/a.",
+      "ExhaustionArmor": "Rozhodl/a se nechat si zbroj a neobnovil/a si žádné vyčerpání.",
+      "HitDiceArmor": "Obnovil/a si méně kostek obnovy než obvykle, protože odpočíval/a ve zbroji.",
+      "NoHitDiceArmor": "Neobnovil/a si žádné kostky obnovy, protože odpočíval/a ve zbroji.",
+      "HitDiceNoArmor": "Rozhodl/a se odpočívat bez zbroje a obnovil/a si běžný počet kostek obnovy.",
+      "PreventedHitDiceRecovery": "Protože byly během důkladného odpočinku kostky obnovy použity, neobnovily se žádné kostky obnovy.",
+      "CouldNotLongRest": "{actorName} si nemohl/a důkladně odpočinout.",
+      "CouldNotShortRest": "{actorName} si nemohl/a krátce odpočinout.",
+      "Flavor": {
+        "ShortRestNormal": "Krátký odpočinek ({duration} {units})",
+        "LongRestNormal": "Důkladný odpočinek ({duration} {units})",
+        "ShortRestNewday": "Krátký odpočinek (Nový den)"
+      },
+      "AlternateShortRestResult": "{name} si krátce odpočinul(a) a obnovil/a {health} bodů výdrže.",
+      "TidyChanged": "Obnovení změnilo nastavení zobrazení vyčerpání na deníku Tidy5e:",
+      "TidyTypeChanged": "Typ vyčerpání změněn z {oldType} na {newType}.",
+      "TidyHintsChanged": "Vlastní nápovědy úrovní byly odstraněny.",
+      "TidyLevelsChanged": "Úrovně vyčerpání změněny z {oldLevels} na {newLevels}."
+    },
+    "Dialogs": {
+      "SaveProfile": {
+        "Title": "Vytvoření nového profilu",
+        "Enter": "Zadej název přednastavení:",
+        "OverrideProfile": "Nový profil nemůže mít stejný název jako starý profil",
+        "Empty": "Nový profil nemůže mít prázdný název"
+      },
+      "DiscardChanges": {
+        "Title": "Neuložené změny",
+        "Content": "Máš v tomto profilu neuložené změny. Opravdu chceš přepnout na jiný profil?"
+      },
+      "ResetDefaultChanges": {
+        "Title": "Obnovení výchozího nastavení",
+        "Content": "Opravdu chceš obnovit výchozí nasavení profilu \"Výchozí\"?"
+      },
+      "DeleteProfile": {
+        "Title": "Odstranění profilu",
+        "Content": "Opravdu chceš odstranit profil \"{profile}\"?"
+      },
+      "QuickSetup": {
+        "Title": "Odpočívání: Rychlé nastavení",
+        "SlowNaturalHealingTitle": "Pomalé přirozené léčení",
+        "SlowNaturalHealingLabel": "Postavy na konci důkladného odpočinku nezískají body výdrže. Místo toho musí pro léčení utratit kostky obnovy jako při krátkém odpočinku.",
+        "RecoverHitDiceTitle": "Obnovení kostek obnovy před důkladným odpočinkem",
+        "RecoverHitDiceLabel": "Změní pomalé přirozené léčení tak, že postavy obnoví své kostky obnovy po začátku důkladného odpočinku, a ne na jeho konci.",
+        "OpenSettings": "Otevřít nastavení",
+        "5eRestCustom": {
+          "Title": "Vlastní nastavení (nastav si vlastní hodnoty)",
+          "LongRestCustomTitle": "Délka důkladného odpočinku v hodinách",
+          "ShortRestCustomTitle": "Délka krátkého odpočinku v hodinách"
+        }
+      },
+      "PromptRest": {
+        "Title": "Výzva k odpočinku pro hráče",
+        "ConfigureProfiles": "Nastavit profily",
+        "Short": "Krátký odpočinek",
+        "Long": "Důkladný odpočinek",
+        "NewDayTitle": "Nový den",
+        "NoNewDayTitle": "Není nový den",
+        "NewDayHint": "Toto způsobí, že postavy, které dokončí odpočinek, obnoví schopnosti, které se obnovují na denní bázi.",
+        "NewDaySimpleCalendarHint": "Podle vyběru níže postavy, které dokončí odpočinek, si obnoví schopnosti, které se obnovují na denní bázi. Řídí to modul <strong>Simple Calendar</strong>.",
+        "NoNewDaySimpleCalendarHint": "Ani důkladný, ani krátký odpočinek nevyústí v nový den, takže postavy po nich <strong>neobnoví</strong> schopnosti, které se obnovují na denní bázi. TŘídí si to modul <strong>Simple Calendar</strong>.",
+        "NewDay": "(Nový den)",
+        "Submit": "Potvrdit",
+        "PlayerListShort": "Odpočinek",
+        "PlayerListFull": "Výzva k odpočinku",
+        "PromptCharactersRest": "Výzva postavám hráčů k odpočinku",
+        "RestProfile": "Profil odpočinku"
+      },
+      "ShortRest": {
+        "ForcedNewDayTitle": "Nový den",
+        "ForcedNewDayHint": "Nastává nový den, takže tento krátký odpočinek obnoví schopnosti, které se obnovují na denní bázi.",
+        "NoHitDiceRest": "Chceš si dát krátký odpočinek? Během krátkého odpočinku můžeš obnovit primární, nebo sekundární zdroje.",
+        "NoMoreRests": "Žádné další krátké odpočinky",
+        "NoMoreRestsSmall": "Nemůžeš již více krátce odpočívat, pravidla hry povolují maximálně <strong>{max_short_rests}</strong> na jeden důkladný odpočinek.",
+        "ShortRestLimit": "Můžeš <strong>{num_short_rests}</strong> krátkých odpočinků, než budeš muset absolvovat důkladný odpočinek.",
+        "ShortRestLimitSmall": "Pravidla hry povolují maximálně <strong>{max_short_rests}</strong> na jeden důkladný odpočinek.",
+        "AutoRoll": "Automatický hod",
+        "MinHitDiceSpend": "Abys dokončil tento krátký odpočinek, musíš utratit <strong>{min_spend}</strong> kostky obnovy.",
+        "MaxHitDiceSpend": "Během tohoto krátkého odpočinku můžeš utratit pouze <strong>{max_spend}</strong> kostek obnovy, (<strong>{current}</strong> zbývá).",
+        "FinishRest": "Dokončit krátký odpočinek"
+      },
+      "RestHealthWarning": {
+        "Title": "Dokončit odpočinek?",
+        "Content": "Neutratil(a) jsi žádné kostky obnovy na obnovení výdrže, opravdu chceš odpočinek dokončit?"
+      },
+      "RestSpendHitDice": {
+        "Title": "Utratit kostky obnovy?",
+        "Content": "Aby byl tento odpočinek dokončen, musíš utratit alespoň {num_dice} kostek obnovy. Opravdu chceš pokračovat?"
+      },
+      "RestNoHitDice": {
+        "Title": "Už nezbývají žádné kostky obnovy",
+        "Content": "Aby byl tento odpočinek dokončen, musíš utratit alespoň {num_dice} kostek obnovy, ale žádné ti nezbývají."
+      },
+      "LongRest": {
+        "ForcedNewDayTitle": "Nový den",
+        "ForcedNewDayHint": "Začíná nový den, takže tento důkladný odpočinek obnoví schopnosti, které se obnovují \"per day\".",
+        "Begin": "Začít důkladný odpočinek",
+        "BeginExplanation": "Zahájením důkladného odpočinku si obnovíš některé kostky obnovy, abys je mohl použít k obnovení bodů výdrže.",
+        "CustomRules": "Hraješ s vlastními pravidly, což znamená, že můžeš obnovit body výdrže, kostky obnovy, zdroje povolání, omezené použití položek a pozice kouzel jinak.",
+        "CustomRulesLink": "Podívej se na vlastní pravidla.",
+        "MinHitDiceSpend": "Aby byl tento důkladný odpočinek dokončen, musíš utratit <strong>{min_spend}</strong> kostek obnovy.",
+        "MaxHitDiceSpend": "Během tohoto důkladného odpočinku můžeš utratit pouze <strong>{max_spend}</strong> kostek obnovy (<strong>{current}</strong> zbývá).",
+        "ArmorRecovery": "Sundat zbroj během důkladného odpočinku?",
+        "ArmorRecoveryHint": "Protože máš vybavenou těžkou zbroj, utrpíš postihy. Klikni na oranžový text vlastních pravidel, aby ses dozvěděl(a) více.",
+        "FinishRest": "Dokončit důkladný odpočinek"
+      },
+      "RestSteps": {
+        "Next": "Další krok",
+        "Prev": "Předchozí krok",
+        "Rest": {
+          "Title": "Odpočinek"
+        },
+        "FoodWater": {
+          "Title": "Jídlo a tekutiny",
+          "FoodRequirement": "Potřebuješ sníst další <strong>{food}</strong> jednotky jídla.",
+          "FoodSated": "Už jsi snědl dost.",
+          "FoodAlmostExhaustion": "Pokud dokončíš tento den bez toho, aby sis dal(a) plné množství jídla, automaticky utrpíš <strong>1 stupeň vyčerpání</strong> za <strong>{days} dní</strong>.",
+          "FoodExhaustion": "Protože hladovíš, automaticky utrpíš <strong>1 stupeň vyčerpání</strong>, pokud tento den dokončíš bez plného potřebného množství jídla.",
+          "ExternalFood": "Má přístup k externímu zdroji jídla",
+          "ExternalFoodFull": "Najíst se dosyta",
+          "ExternalFoodHalf": "Najíst se do půlky potřebného množství",
+          "WaterRequirement": "Potřebuješ vypít další <strong>{water}</strong> jednotky tekutin.",
+          "AmountToConsume": "Množství k vypití",
+          "WaterSated": "Už jsi vypil(a) dost.",
+          "NoWater": "Automaticky utrpíš <strong>{exhaustion} úrovně vyčerpání</strong>, pokud tento den dokončíš s méně než polovičním potřebným množstvím tekutin.",
+          "HalfWater": "Pokud tento den dokončíš bez plného množství tekutin, musíš hodit záchranný hod na Odolnost s SO {dc}, jinak utrpíš <strong>{exhaustion} úrovně vyčerpání</strong>.",
+          "DragDrop": "Přesuň a polož položky ke spotřebě, nebo vyber:",
+          "DayWorth": "Jedno použití položky za celý den pro {type}",
+          "ExternalWater": "Má přístup k externímu zdroji tekutin",
+          "ExternalWaterFull": "Napít se dosyta",
+          "ExternalWaterHalf": "Napít se do půlky potřebného množství",
+          "ExternalCost": "Bude to stát <strong>{cost} {currency}</strong>.",
+          "CantAfford": "<strong>Nemáš dostatek prostředků na zaplacení jídla/tekutin, kterou jsi vybral - změň volbu, abys mohl tento odpočinek dokončit.</strong>"
+        },
+        "SpellRecovery": {
+          "Title": "Obnova magie",
+          "SpellSlotFeature": "Obnovit pozice kouzel pomocí {featureName}",
+          "SpellSlotRule": "Obnovit pozice kouzel",
+          "SpellSlotsLeft": "Zbývá ti {spellSlotsLeft} stupňů pozic kouzel k obnovení.",
+          "NoFeatureUse": "Nemáš žádná použití {featureName}, takže během tohoto krátkého odpočinku nemůžeš obnovit žádné pozice kouzel.",
+          "FullSpells": "Máš všechny pozice kouzel, žádnou nepotřebuješ obnovovat."
+        }
+      },
+      "LongRestSettingsDialog": {
+        "Title": "Nastavení důkladného odpočinku",
+        "Content": "Toto jsou nastavení, která tvůj PJ nastavil pro důkladné odpočinky v této kampani."
+      },
+      "CharacterOwnersOffline": {
+        "Title": "Vlastníci postav offline",
+        "Content": "Vlastníci následujících postav, kteří byly vyzváni k odpočinku, jsou offline. Chceš dokončit jejich odpočinek za ně?"
+      },
+      "Resources": {
+        "Configure": "Nastavit obnovení zdrojů",
+        "Title": "Nastavení zdrojů",
+        "Name": "Název",
+        "Value": "Hodnota",
+        "Short": "Krátký",
+        "Long": "Důkladný",
+        "RecoveryFormula": "Vzorec obnovení"
+      },
+      "ModuleConfig": {
+        "Title": "Nastavení obnovení a odpočinku",
+        "General": "Obecná nastavení",
+        "LongRest": "Důkladný odpočinek",
+        "ShortRest": "Krátký odpočinek",
+        "ItemNames": "Názvy schopností",
+        "FoodAndWater": "Jídlo a tekutiny",
+        "Confused": "Zmatek? Příliš mnoho možností?",
+        "QuickSetup": "Klikni sem pro rychlé nastavení!",
+        "Donate": "Pokud se ti tento modul líbí, zvaž dar na jeho podporu!",
+        "MoreToCome": "A s dalšími možnostmi konfigurace na cestě...",
+        "Request": "O nové funkce požádej zde.",
+        "Submit": "Uložit nastavení",
+        "ModuleProfile": "Profil modulu:",
+        "ImportProfile": "Importovat profil",
+        "ExportProfile": "Exportovat profil"
+      },
+      "ItemOverrides": {
+        "Title": "Obnovení odpočinku: Jídlo a tekutiny",
+        "UsesCustomRecovery": "Použití vlastní nastavení obnovení",
+        "Type": "Typ:",
+        "Enabled": "Povoleno",
+        "Formula": "Vzorec:",
+        "IsConsumable": "Položka je spotřební",
+        "DayWorth": "Jedno použití odpovídá celodenní potřebě",
+        "ChargesDescription": "Systém jídla a tekutin pro obnovení odpočinku vyžaduje, aby položka měla nabíjení - jedno nabití odpovídá jedné jednotce jídla, nebo tekutin."
+      },
+      "AbilityUse": {
+        "Title": "Vyber, kolik z této položky chceš spotřebovat:",
+        "DayWorthTitleBoth": "Tento typ spotřební položky pokrývá celodenní potřebu jak jídla, tak tekutin.",
+        "DayWorthTitleFood": "Tento typ spotřební položky pokrývá celodenní potřebu jídla.",
+        "DayWorthTitleWater": "Tento typ spotřební položky pokrývá celodenní potřebu tekutin.",
+        "DayWorthTitleCont": "Nebudeš potřebovat nic tohoto typu až do dalšího dne. Nemůžeš spotřebovat polovinu tohoto typu položky",
+        "SatedFood": "Jsi už sytý(á), z konzumace tohoto předmětu nezískáš žádné výhody.",
+        "NotSatedFood": "Potřebuješ spotřebovat {units} jednotek, aby ses nasytil(a).",
+        "SatedWater": "Jsi už zavodněn(a), z konzumace tohoto předmětu nezískáš žádné výhody.",
+        "NotSatedWater": "Potřebuješ spotřebovat {units} jednotek tekutin, aby ses zavodnil(a).",
+        "FullUnit": "Spotřebovat plnou jednotku",
+        "HalfUnit": "Spotřebovat poloviční jednotku"
+     }  
+    },
+    "Traits": {
+      "Title": "Obnovení odpočinku",
+      "HitDieBonus": {
+        "Title": "Bonus k hodu na obnovu",
+        "Hint": "Kdykoliv tato postava hodí na obnovu, přičte se tento bonus k hodu. Může to být i vzorec, například \"1d6 + 3\"."
+      },
+      "HitDieAdvantage": {
+        "Title": "Výhoda na hod na obnovu",
+        "Hint": "Kdykoliv tato postava hodí na obnovu, hází s Výhodou."
+      },
+      "LongRestSpellPointsBonus": {
+        "Title": "Bonus k obnovení pozic kouzel podobný obnově",
+        "Hint": "Toto je bonus, který bude přidán k obnovení pozic kouzel během důkladného odpočinku."
+      },
+      "LongRestSpellPointsFormula": {
+        "Title": "Vzorec pro obnovení pozic kouzel podobných obnově",
+        "Hint": "Tento rys ti umožňuje přepsat vzorec pro obnovení pozic kouzel pro tuto konkrétní postavu."
+      },
+      "FoodUnitsPerDay": {
+        "Title": "Jednotky jídla potřebné na den",
+        "Hint": "Toto nastavení přepisuje počet jednotek jídla, které tato postava denně potřebuje."
+      },
+      "WaterUnitsPerDay": {
+        "Title": "Jednotky tekutin potřebné na den",
+        "Hint": "Toto přepisuje počet jednotek tekutin, které tato postava denně potřebuje."
+      },
+      "NoFoodWater": {
+        "Title": "Vypnout požadavek na jídlo a tekutiny",
+        "Hint": "Pokud je zaškrtnuto, tato postava nepotřebuje žádné jídlo ani tekutiny, podobně jako schopnost Nehynoucí přirozenost černokněžníka."
+      }
+    },
+    "Settings": {
+      "QuickSetup": {
+        "Title": "Rychlé nastavení",
+        "Label": "Otevřít rychlé nastavení",
+        "Hint": "Jednodušší rozhraní pro rychlou konfiguraci běžných nastavení odpočinků."
+      },
+      "Configure": {
+        "Title": "Nastavení modulu",
+        "Label": "Nastavení odpočinku",
+        "Hint": "Zde můžeš nastavit, jak budou fungovat odpočinky."
+      },
+      "QuickHDRoll": {
+        "Title": "Rychlý hod na obnovu (přeskočení dialogu)",
+        "Hint": "Přeskočí dialog pro hod na obnovu a provede hod rychle."
+      },
+      "ShowPlayerListRestButton": {
+        "Title": "Zobrazení tlačítka pro odpočinek",
+        "Hint": "Určuje, zda bude zobrazeno tlačítko pro odpočinek pod seznamem hráčů vlevo dole (vyžaduje znovunačtení)"
+      },
+      "Debug": {
+        "Title": "Povolit ladění",
+        "Label": "Tiskne ladící zprávy do konzole"
+      },
+      "RequiresModule": "Vyžaduje {module_name}",
+      "General": {
+        "HitDieRollFormula": {
+          "Title": "Vzorec pro hod na obnovu",
+          "Hint": "Nastavuje vzorec pro hod na obnovu, umožňující udělit Výhodu nebo maximalizaci výsledků."
+        },
+        "PeriaptRollMechanics": {
+          "Title": "Mechanika násobení hodu na obnovu",
+          "Hint": "Nastavuje, jak se budou násobit efekty, jako je předmět \"Škapulíř hojení ran\" a nastavení \"Násobitel hodů na obnovu\".",
+          "Options": {
+            "MultiplyRoll": "Násobit hod kostkou",
+            "MultiplyTotal": "Násobit celkový výsledek"
+          }
+        },
+        "PreventUserRest": {
+          "Title": "Zabránění uživateli v odpočinku",
+          "Hint": "Tímto zabráníš uživatelům samotným zahájit odpočinek, musí je k tomu vyzvat PJ."
+        },
+        "EnableAutoRollButton": {
+          "Title": "Povolení tlačítka automatického hodu na obnovu",
+          "Hint": "Přidá tlačítko do rozhraní důkladného a krátkého odpočinku, aby hráči mohli automaticky házet na obnovu, dokud nebudou téměř plní."
+        },
+        "EnablePromptRestTimePassing": {
+          "Title": "Povolení automatického plynutí času při výzvě k odpočinku",
+          "Hint": "Umožňuje plynutí času vždy, když jsou hráči vyzváni k odpočinku PJ. To může způsobit vypršení časově závislých efektů na postavách."
+        },
+        "EnableSimpleCalendarIntegration": {
+          "Title": "Povolení integrace s modulem Simple Calendar",
+          "Hint": "Povolí tlačítko \"Nový den\" v rozhraní pro výzvu k odpočinku a v rozhraní důkladného/krátkého odpočinku pro hráče automatizované podle aktuálního času v kalendáři."
+        },
+        "EnableSimpleCalendarNotes": {
+          "Title": "Povolení poznámek modulu Simple Calendar",
+          "Hint": "Povolí vytvoření poznámky Simple Calendar pro každý krátký/důkladný odpočinek postavy, obsah bude totožný s výstupem zprávy v chatu na konci odpočinku.",
+          "Hint2": "Poznámka: Hráči musí mít povolení \"Vytvářet záznamy v deníku\" a oprávnění \"Přidat poznámky\" v Simple Calendar, pokud odpočívají online."
+        },
+        "SimpleCalendarNotesOnlyPrompted": {
+          "Title": "Povolení poznámek pouze při výzvě k odpočinku",
+          "Hint": "Povolí vytvoření poznámek Simple Calendar pouze tehdy, když byl odpočinek vyzván PJ."
+        },
+        "HDRecoveryFraction": {
+          "Title": "Násobitel hodů na obnovu",
+          "Hint": "Část hodu na obnovu, která se skutečně obnoví jako výdrž pokaždé, když je hozena kostka obnovy."
+        }
+      },
+      "FoodAndWater": {
+        "EnableFoodAndWater": {
+          "Title": "Povolení automatizace jídla a tekutin",
+          "Hint": "Povolí podfunkce týkající se automatizace jídla a tekutin, jak je uvedeno níže."
+        },
+        "DisableRollConsumableItems": {
+          "Title": "Zakáz hod na spotřební položky při odpočinku",
+          "Hint": "Pokud se postava rozhodne spotřebovat během odpočinku položku, pak se ve výchozím nastavení bude házet jako při kliknutí na tlačítko pro hod. Toto nastavení tento automatický hod vypne."
+        },
+        "FoodUnitsPerDay": {
+          "Title": "Počet denně vyžadovaných jednotek jídla",
+          "Hint": "Nastaví počet jednotek jídla, které postavy denně potřebují. Nastavením na 0 se úplně zruší požadavek na jídlo."
+        },
+        "WaterUnitsPerDay": {
+          "Title": "Počet denně vyžadovaných jednotek tekutin",
+          "Hint": "Nastaví počet jednotek tekutin, které postavy denně potřebují. Nastavením na 0 se úplně zruší požadavek na tekutiny."
+        },
+        "ExternalFoodAccess": {
+          "Title": "Přístup k externímu zdroji jídla",
+          "Hint": "Nastaví, zda hráči budou moci během odpočinku vybrat \"Externí zdroj jídla\" místo spotřebních položek. \"Plný\" znamená plný přístup jako v hostincích a městech, \"Poloviční\" znamená omezený přístup, nebo nekvalitní jídlo, \"Žádný\" znamená pobyt v divočině, nebo hladovění."
+        },
+        "ExternalFoodHasCost": {
+          "Title": "Cena externích zdrojů jídla",
+          "Hint": "Určuje, zda má \"externí jídlo\" finanční náklady, jako například cena jídla v hospodě."
+         },
+       "ExternalFoodFullCostCurrency": {
+          "Title": "Cena za plné jídlo",
+          "Hint": "Cena za získání plného požadovaného množství jídla během odpočinku."
+        },
+        "ExternalFoodHalfCostCurrency": {
+          "Title": "Cena za poloviční jídlo",
+          "Hint": "Cena za získání poloviny požadovaného množství jídla během odpočinku."
+        },
+        "ExternalWaterAccess": {
+          "Title": "Přístup k externímu zdroji tekutin",
+          "Hint": "Stejné jako výše, ale pro tekutiny. Měj na paměti, že pokud postavy nemají přístup k tekutinám, pak \"Polovina\" a \"Žádná\" způsobí okamžité vyčerpání."
+        },
+        "ExternalWaterHasCost": {
+          "Title": "Cena externího zdroje tekutin",
+          "Hint": "Určí, zda má \"externí tekutina\" finanční hodnotu, třeba cenu nápojů v hospodě."
+        },
+        "ExternalWaterFullCostCurrency": {
+          "Title": "Cena za plnou dávku tekutin",
+          "Hint": "Cena za získání plného množství tekutin požadovaného během odpočinku."
+        },
+        "ExternalWaterHalfCostCurrency": {
+          "Title": "Cena za poloviční dávku tekutin",
+          "Hint": "Cena za získání poloviny požadovaného množství tekutin během odpočinku."
+        },
+        "AutomateFoodWaterExhaustion": {
+          "Title": "Automatizace vyčerpání z nedostatku jídla a tekutin",
+          "Hint": "Povolí, aby postavy trpěly vyčerpáním, pokud dostatečně nejedí, nebo nepijí. Vyžaduje povolení automatizace vyčerpání z odpočinku."
+        },
+        "NoFoodDuration": {
+          "Title": "Maximální počet dní bez jídla",
+          "Hint": "Určuje, kolik dní mohou postavy přežít bez jídla, než začnou trpět automatickým vyčerpáním."
+        },
+        "HalfWaterSaveDC": {
+          "Title": "SO vyčerpání při polovičním množství tekutin",
+          "Hint": "Určuje SO záchranného hodu na Odolnost, který musí postavy zvládnout, když vypijí pouze polovinu požadovaného množství tekutin."
+        },
+        "FoodWaterPromptNewDay": {
+          "Title": "Výzva k jídlu a pití v novém dni",
+          "Hint": "Pokud je povoleno, požadavek na jídlo a pití bude vyžadován pouze při \"novém dnu\" po odpočinku, a to bez ohledu na to, zda jde o krátký či důkladný."
+        }
+      },
+      "ShortRest": {
+        "IgnoreInactive": {
+          "Title": "Ignorovat neaktivní hráčské postavy",
+          "Hint": "Pokud máš v partě barda se Odpočinkovou písní, nebo kuchaře, bude nastavení fungovat pouze v případě, kdy je vlastník postavy aktivní a přihlášený."
+        },
+          "MaxShortRests": {
+            "Title": "Maximální počet krátkých odpočinků v jednom důkladném odpočinku",
+            "Hint": "Toto nastavení brání postavám v provádění krátkých odpočinků, pokud dosáhnou takovému počtu, který odpovídá tomuto číslu. Důkladný odpočinek tento počet resetuje. Nastavení nuly toto nastavení vypne."
+        },
+          "MinHitDieSpend": {
+            "Title": "Minimální počet použití kostek obnovy během krátkého odpočinku",
+            "Hint": "Toto nastavení brání postavám v dokončení krátkého odpočinku, pokud neutratí alespoň tento počet kostek obnovy. Nastavení na nulu toto nastavení vypne."
+        },
+          "MaxHitDieSpend": {
+            "Title": "Maximální počet použití kostky obnovy během krátkého odpočinku",
+            "Hint": "Toto nastavení brání postavám v házení kostkami obnovy, jakmile dosáhnou tohoto počtu použití. Toto nastavení nemůže být nikdy menší než nastavení \"Minimální počet použití kostek obnovy během krátkého odpočinku\"."
+        },
+          "NoHitDice": {
+            "Title": "Zakáz házení kostek obnovy během krátkého odpočinku",
+            "Hint": "Toto nastavení zabrání postavám házení kostkami obnovy během krátkých odpočinků."
+        },
+          "ResourcesRecoveryFraction": {
+            "Title": "Částečná obnova zdrojů",
+            "Hint": "Část zdrojů, která se obnoví během krátkého odpočinku."
+        },
+          "ItemUsesRecoveryFraction": {
+            "Title": "Částečná obnova použití položek",
+            "Hint": "Část použití položek (položky, spotřební předměty atd.), která se obnoví během krátkého odpočinku, pokud položeka má nabití s omezeným počtem použití na krátký odpočinek."
+        },
+          "FeatUsesRecoveryFraction": {
+            "Title": "Částečná obnova použití schopností",
+            "Hint": "Část použití schopností, která se obnoví během krátkého odpočinku, pokud mají nabití s omezeným počtem použití na krátký odpočinek."
+        },
+          "PactSpellSlotsLongRecoveryFraction": {
+            "Title": "Částečná obnova paktových pozic černokněžníka",
+            "Hint": "Část paktových pozic černokněžníka, která se obnoví během krátkého odpočinku."
+        },
+          "SongOfRestMultiuse": {
+            "Title": "S Odpočinkovou písní se hází zvlášť pro každou použitou kostku obnovy",
+            "Hint": "Povolí, aby Odpočinková píseň přidávala bonus pro každou použitou kostku obnovy během odpočinku, místo pouze té první."
+        },
+          "HitPointsRecoveryFraction": {
+            "Title": "Částečná obnov bodů výdrže",
+            "Hint": "Část bodů výdrže, která se obnoví během krátkého odpočinku (kromě hodů kostek obnovy)."
+        }
+      },
+      "LongRest": {
+        "AutomateExhaustion": {
+          "Title": "Povolení automatizace vyčerpání",
+          "Hint": "Tímto nastavením každý důkladný odpočinek sníží vyčerpání o 1."
+        },
+        "ExhaustionIntegration": {
+          "Title": "Integrace modulu vyčerpání",
+          "Hint": "Toto nastavení umožní použít další moduly k uplatnění jejich aktivních efektů vyčerpání na postavy."
+        },
+        "OneDnDExhaustion": {
+          "Title": "Povolení vyčerpání podle DnD 2024",
+          "Hint": "V novém DnD 2024 se vyčerpání hromadí do 10 (při kterém postava zemře) a aplikuje -1 postih na ověření schopností, útoky, záchranné hody a SO záchrany kouzel postavy za každou úroveň vyčerpání. Jednoduše změň úroveň vyčerpání na postavách a postih se automaticky aplikuje.",
+          "Hint2": "Poznámka: Toto nastavení není kompatibilní s modulem <em>Alternative Exhaustion 5e</em>."
+        },
+        "OneDnDExhaustionSheetOverride": {
+          "Title": "Povolení zobrazení pro vyčerpání DnD 2024 zobrazení",
+          "Hint": "Povolí úpravu deníku k zobrazení 10 místo 6 stupňů vyčerpání."
+        },
+        "PreventLongRestExhaustionRecovery": {
+          "Title": "Zabránění obnově vyčerpání při důkladném odpočinku",
+          "Hint": "Při povolení toto nastavení zabrání obnově vyčerpání po dokončení důkladného odpočinku."
+        },
+        "RollHitDice": {
+          "Title": "Povolení házet kostkami obnovy při důkladném odpočinku",
+          "Hint": "Povolí UI pro hody na obnovu v dialogu důkladného odpočinku."
+        },
+        "PreRegainHitDice": {
+          "Title": "Doplnění kostek obnovy před dokončením důkladného odpočinku",
+          "Hint": "Tímto se obnoví kostky obnovy před dokončením důkladného odpočinku, takže je můžeš hodit jako součást tohoto odpočinku."
+        },
+        "PreRegainHitDiceBuffer": {
+          "Title": "Povolení dočasné paměti hodů na obnovu",
+          "Hint": "Toto nastavení způsobí, že každá postava vždy plně získá kostky obnovy, i kdyby tím přesáhla svůj maximální počet, takže žádné hody na obnovu nejsou zbytečně ztraceny. Nevyužité hody nad maximem zmizí po dokončení důkladného odpočinku."
+        },
+        "PreventRegainHitDice": {
+          "Title": "Zabránění doplění kostek obnovy, pokud byly hozeny",
+          "Hint": "Toto nastavení způsobí, že postavy, které během důkladného odpočinku hodí nějakými kostkami obnovy, tyto kostky neobnoví na konci důkladného odpočinku. Toto není kompatibilní s nastavením \"Enable hit dice recovery before finishing long rest\"."
+        },
+        "MaxHitDieSpend": {
+          "Title": "Maximální počet hodů na obnovu při důkladném odpočinku",
+          "Hint": "Tímto nastavením se zabrání postavám házet hody na obnovu, jakmile dosáhnou nastaveného počtu kostek obnovy."
+        },
+        "HitPointsRecoveryFraction": {
+          "Title": "Část obnovy výdrže",
+          "Hint": "Jaká část bodů výdrže se doplní při důkladném odpočinku."
+        },
+        "HitDiceRecoveryFraction": {
+          "Title": "Část obnovy kostek obnovy",
+          "Hint": "Jaká část kostek obnovy se doplní při důkladném odpočinku."
+        },
+        "HitDiceRecoveryRounding": {
+          "Title": "Zaokrouhlení doplnění kostek obnovy",
+          "Hint": "Určí, jak zaokrouhlovat počet doplněných kostek obnovy."
+        },
+        "ResourcesRecoveryFraction": {
+          "Title": "Část obnovy zdrojů",
+          "Hint": "Jaká část zdrojů se má doplnit při důkladném odpočinku."
+        },
+        "SpellSlotsRecoveryFraction": {
+          "Title": "Část doplnění pozic kouzel",
+          "Hint": "Jaká část pozic kouzel se má doplnit při důkladném odpočinku."
+        },
+        "CustomSpellSlotRecovery": {
+          "Title": "Povolení obnovy pozic kouzel jako u bodů",
+          "Hint": "Povolením tohoto nastavení obnoví své pozice kouzel všichni schopnostmi podobnými třeba kouzelnické „Zotavení mystiky“. Toto nastavení lze zapnout pouze, když je „Část doplnění pozic kouzel\" nastavena na vlastní hodnoty. Postavy obnoví počet pozic podle nastavení vlastního vzorce."
+        },
+        "PactSpellSlotsLongRecoveryFraction": {
+          "Title": "Část obnovy pozic u kouzel patrona",
+          "Hint": "Jaká část pozic kouzel patrona se má doplnit při důkladném odpočinku."
+        },
+        "ItemUsesRecoveryFraction": {
+          "Title": "Část obnovy použití položek",
+          "Hint": "Jaká část použití položek (předměty, spotřební věci atd.) se má doplnit při důkladném odpočinku."
+        },
+        "FeatUsesRecoveryFraction": {
+          "Title": "Část obnovy použití schopností",
+          "Hint": "Jaká část použití dovedností se má doplnit při důkladném odpočinku."
+        },
+        "DailyUsesRecoveryFraction": {
+          "Title": "Část obnovy denních použití",
+          "Hint": "Jaká část denních použití (položky nastavením obnovy „Den“) se má doplnit při důkladném odpočinku."
+        },
+        "AutomateArmor": {
+          "Title": "Automatizace zbroje při důkladném odpočinku",
+          "Hint": "Když se zaškrtne, tak zbroj jiná než lehká omezuje důkladné odpočinky. Níže nastav, jak zbroj ovlivňuje důkladný odpočinek."
+        },
+        "ArmorHitDiceRecoveryFraction": {
+          "Title": "Část doplnění kostek obnovy se zbrojí",
+          "Hint": "Pokud má postava při důkladném odpočinku na sobě zbroj jinou než lehkou, je toto část doplněných kostek obnovy při důkladném odpočinku."
+        },
+        "AutomateArmorExhaustion": {
+            "Title": "Zbroj brání obnově vyčerpání",
+            "Hint": "Při povolení tohoto nastavení a pokud má postava při důkladném odpočinku na sobě zbroj jinou než lehkou, neobnoví vyčerpání. Vyžaduje povolenou automatizaci vyčerpání."
+        }
+      },
+      "ItemNames": {
+        "WizardClassName": {
+          "Title": "Název povolání kouzelníka",
+          "Hint": "Zde můžeš nastavit, jak bude povolání ´kouzelník´ ve vaší hře nazýváno. Může to být lokalizační řetězec."
+        },
+        "DruidClassName": {
+          "Title": "Název povolání druida",
+          "Hint": "Zde můžeš nastavit, jak bude povolání ´druid´ ve vaší hře nazýváno. Může to být lokalizační řetězec."
+        },
+        "BardClassName": {
+          "Title": "Název povolání barda",
+          "Hint": "Zde můžeš nastavit, jak bude povolání ´bard´ ve vaší hře nazýváno. Také určí, kdo tedy používá Odpočinkovou píseň. Může to být lokalizační řetězec."
+        },
+        "ArcaneRecovery": {
+          "Title": "Název Zotavení mystiky",
+          "Hint": "Zde můžeš nastavit, jak bude kouzelníkovo ´Zotavení mystiky´ ve vaší hře nazýváno. Může to být lokalizační řetězec."
+        },
+        "NaturalRecovery": {
+          "Title": "Název Přírodní obnovy",
+          "Hint": "Zde můžeš nastavit, jak bude druidova ´Přírodní obnova´ ve vaší hře nazývána. Může to být lokalizační řetězec."
+        },
+        "NaturalRecoveryActivity": {
+          "Title": "Název aktivity Přírodní obnovy",
+          "Hint": "Zde můžeš nastavit, jak má být druidova aktivita ´Přírodní obnova´ ve vaší hře nazývána. Může to být lokalizační řetězec."
+        },
+        "SongOfRest": {
+          "Title": "Název Odpočinkové písně",
+          "Hint": "Zde můžeš nastavit, jak bude bardská schopnost ´Odpočinková píseň´ ve vaší hře nazývána. Může to být lokalizační řetězec."
+        },
+        "ChefFeat": {
+          "Title": "Název odbornosti Kuchaře",
+          "Hint": "Zde můžeš nastavit, jak bude odbornost ´Kuchař´ ve vaší hře nazývána. Může to být lokalizační řetězec."
+        },
+        "ChefTools": {
+          "Title": "Název kuchařských nístrojů",
+          "Hint": "Zde můžeš nastavit, jak bude ´kuchařské nástroje´ ve vaší hře nazývány. Je to lokalizační řetězec. Ponech to prázdné, pokud chceš, aby byly při použití odbornosti kuchařské nástroje potřeba."
+        },
+        "DurableFeat": {
+          "Title": "Název odbornosti Otužilce",
+          "Hint": "Zde můžeš nastavit, jak bude odbornost ´Otužilec´ ve vaší hře nazývána. Může to být lokalizační řetězec."
+        },
+        "PeriaptItem": {
+          "Title": "Název Škapulíře hojení ran",
+          "Hint": "Zde můžeš nastavit, jak bude ´Škapulíř hojení ran´ ve vaší hře nazýván. Může to být lokalizační řetězec."
+        },
+        "WoundClosureBlessing": {
+          "Title": "Název Požehnání hojení ran",
+          "Hint": "Zde můžeš nastavit, jak bude ´Požehnání hojení ran´ ve vaší hře nazýváno. Může to být lokalizační řetězec."
+        },
+        "BlackBloodFeature": {
+          "Title": "Název Léčení černé krve",
+          "Hint": "Zde můžeš nastavit, jak bude ´Léčení černé krve´ ve vaší hře nazýváno. Může to být lokalizační řetězec."
+        }
+      }
+    }
+  }
+}
