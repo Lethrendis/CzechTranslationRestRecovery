@@ -10,7 +10,7 @@ Tento modul poskytuje českou lokalizaci pro RestRecovery for 5e verze 3.0.6. Ob
 Pro instalaci modulu obvyklým upůsobem můžeš použít následující odkaz ve Foundry VTT:
 
 ```
-https://github.com/Lethrendis/CzechTranslationRestRecovery
+https://raw.githubusercontent.com/Lethrendis/CzechTranslationRestRecovery/main/module.json
 ```
 
 ## Autor
