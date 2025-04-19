@@ -31,8 +31,8 @@
       "Name": "Vyčerpání (DnD2024)",
       "Description": "V DnD2024 bytost při vyčerpání trpí kumulativními -1 postihy za každou úroveň vyčerpání na všechny hody k20 (hody na útok, ověření vlastností i dovedností a záchranné hody) a SO kouzel. Když bytost dosáhne desáté úrovně vyčerpání, umírá."
     },
-    "PatchedRecovery": "{actorName} s {recoveryName} byl ošetřen.",
-    "PatchedConsumable": "Aktualizováno použití {itemName}.",
+    "PatchedRecovery": "Aktér {actorName} s {recoveryName} byl ošetřen.",
+    "PatchedConsumable": "Aktualizováno použití položky {itemName}.",
     "Fractions": {
       "None": "Žádná",
       "Quarter": "Čtvrtina",
@@ -172,7 +172,9 @@
         "PlayerListShort": "Odpočinek",
         "PlayerListFull": "Výzva k odpočinku",
         "PromptCharactersRest": "Výzva postavám hráčů k odpočinku",
-        "RestProfile": "Profil odpočinku"
+        "RestProfile": "Profil odpočinku",
+        "BastionTurn": "Posune tahy pevnosti",
+        "BastionTurnHint": "Toto nastavení způsobí, že všechyn zařízení pevnosti se posounou o 1 tah (<strong>{days}</strong> dní)."
       },
       "ShortRest": {
         "ForcedNewDayTitle": "Nový den",
@@ -256,15 +258,6 @@
       "CharacterOwnersOffline": {
         "Title": "Vlastníci postav offline",
         "Content": "Vlastníci následujících postav, kteří byly vyzváni k odpočinku, jsou offline. Chceš dokončit jejich odpočinek za ně?"
-      },
-      "Resources": {
-        "Configure": "Nastavit obnovení zdrojů",
-        "Title": "Nastavení zdrojů",
-        "Name": "Název",
-        "Value": "Hodnota",
-        "Short": "Krátký",
-        "Long": "Důkladný",
-        "RecoveryFormula": "Vzorec obnovení"
       },
       "ModuleConfig": {
         "Title": "Nastavení obnovení a odpočinku",
@@ -492,10 +485,6 @@
             "Title": "Zakáz házení kostek obnovy během krátkého odpočinku",
             "Hint": "Toto nastavení zabrání postavám házení kostkami obnovy během krátkých odpočinků."
         },
-          "ResourcesRecoveryFraction": {
-            "Title": "Částečná obnova zdrojů",
-            "Hint": "Část zdrojů, která se obnoví během krátkého odpočinku."
-        },
           "ItemUsesRecoveryFraction": {
             "Title": "Částečná obnova použití položek",
             "Hint": "Část použití položek (položky, spotřební předměty atd.), která se obnoví během krátkého odpočinku, pokud položeka má nabití s omezeným počtem použití na krátký odpočinek."
@@ -571,10 +560,6 @@
           "Title": "Zaokrouhlení doplnění kostek obnovy",
           "Hint": "Určí, jak zaokrouhlovat počet doplněných kostek obnovy."
         },
-        "ResourcesRecoveryFraction": {
-          "Title": "Část obnovy zdrojů",
-          "Hint": "Jaká část zdrojů se má doplnit při důkladném odpočinku."
-        },
         "SpellSlotsRecoveryFraction": {
           "Title": "Část doplnění pozic kouzel",
           "Hint": "Jaká část pozic kouzel se má doplnit při důkladném odpočinku."
@@ -646,7 +631,7 @@
           "Hint": "Zde můžeš nastavit, jak bude odbornost ´Kuchař´ ve vaší hře nazývána. Může to být lokalizační řetězec."
         },
         "ChefTools": {
-          "Title": "Název kuchařských nístrojů",
+          "Title": "Název kuchařských nástrojů",
           "Hint": "Zde můžeš nastavit, jak bude ´kuchařské nástroje´ ve vaší hře nazývány. Je to lokalizační řetězec. Ponech to prázdné, pokud chceš, aby byly při použití odbornosti kuchařské nástroje potřeba."
         },
         "DurableFeat": {
